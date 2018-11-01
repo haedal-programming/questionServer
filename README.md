@@ -5,8 +5,13 @@
 
 ## 괜찮습니다! 옆 친구도 당연히 모르니 마음껏 질문하세요!
 
-![client](../img/client.png)  
-![server](../img/server.png)
+아래 예시 그림처럼 실행됩니다
+
+#### 학생들의 실행창
+![client](/img/client.png)  
+
+#### 질문 후 서버의 실행창 
+![server](/img/server.png)
 
 
 아래의 코드를 Python IDLE에 넣고 실행합시다
