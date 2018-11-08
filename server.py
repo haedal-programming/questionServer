@@ -19,7 +19,7 @@ class UserManager: # 사용자관리 및 채팅 메세지 전송을 담당하는
  
    def addUser(self, username, conn, addr): # 사용자 ID를 self.users에 추가하는 함수
       if username in self.users: # 이미 등록된 사용자라면
-         conn.send('이미 등록된 사용자입니다.\n'.encode())
+         conn.send('이미 등록된 사용자입니다.\n'.encode('utf-8'))
          return None
  
       # 새로운 사용자를 등록함
@@ -54,7 +54,7 @@ class UserManager: # 사용자관리 및 채팅 메세지 전송을 담당하는
  
    def sendMessageToAll(self, msg):
       for conn, addr in self.users.values():
-         conn.send(msg.encode())
+         conn.send(msg.encode('utf-8'))
 class MyTcpHandler(socketserver.BaseRequestHandler):
    userman = UserManager()
      
@@ -79,7 +79,7 @@ class MyTcpHandler(socketserver.BaseRequestHandler):
  
    def registerUsername(self):
       while True:
-         self.request.send('로그인ID:'.encode())
+         self.request.send('로그인ID:'.encode('utf-8'))
          username = self.request.recv(1024)
          username = username.decode().strip()
          if self.userman.addUser(username, self.request, self.client_address):

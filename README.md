@@ -13,6 +13,12 @@
 #### 질문 후 서버의 실행창 
 ![server](/img/server.png)
 
+### 작성자의 바램
+
+**TCP/IP 통신**을 공부하면 아래의 내용이 재밌겠지만  
+모르고 본다면 지옥입니다.  
+한줄씩 코드 해석하기 보단   
+일단 돌아가는 코드를 만지며 자신감을 쌓고 흥미를 붙여봅니다.  
 
 아래의 코드를 Python IDLE에 넣고 실행합시다
 
@@ -45,10 +51,18 @@ def runChat():
       while True:
          msg = input()
          if msg == '/quit':
-            sock.send(msg.encode())
+            sock.send(msg.encode('utf-8'))
             break
  
-         sock.send(msg.encode())
+         sock.send(msg.encode('utf-8'))
              
 runChat()
 ```
+
+#### 참고할 문서
+* [맥 포트포워딩 하는 방법](https://superuser.com/questions/30917/how-to-make-a-port-forward-in-mac-os-x)
+* [맥 포트포워딩 프로그램](https://www.codingmonkeys.de/portmap/)
+* [원격에서 맥 접속하기](http://blog.arzz.com/446)
+* [파이썬으로 채팅 서버 만들기](http://lidron.tistory.com/44)
+* [파이썬으로 채팅 서버 만들기 2](http://qkqhxla1.tistory.com/189)
+* [파이썬으로 채팅 서버 만들기 3](http://toyongyeon.cafe24.com/?p=517)
