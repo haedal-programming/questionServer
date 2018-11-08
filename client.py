@@ -1,8 +1,9 @@
 import socket
 from threading import Thread
- 
+
+# server.py가 돌아가는 컴퓨터가 서버입니다
 # 서버 IP 입력합시다
-HOST = '172.30.1.59'
+HOST = '211.194.234.12'
 PORT = 9009
  
 def rcvMsg(sock):

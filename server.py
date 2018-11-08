@@ -1,8 +1,10 @@
 import socketserver
 import threading
  
-# 서버 IP 입력합시다 
-HOST = '172.30.1.59'
+# 서버 자신에게 들어오는 코드기 때문에
+# 0.0.0.0을 사용합니다 
+# client는 현재 컴퓨터의 외부 ip를 사용해 들어옵니다
+HOST = '0.0.0.0'
 PORT = 9009
 lock = threading.Lock() # syncronized 동기화 진행하는 스레드 생성
  
